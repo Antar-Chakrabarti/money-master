@@ -15,7 +15,7 @@ document.getElementById('calculating-btn').addEventListener('click', () => {
     const clothExpAmount = getInputValue('clothexp');
     // total expense
     const totalExp = document.getElementById('expense-total');
-    if (totalExp > 0) {
+    if (foodExpAmount > 0 && rentExpAmount > 0 && clothExpAmount > 0) {
         totalExp.innerText = foodExpAmount + rentExpAmount + clothExpAmount;
     }
     const totalExpAmount = parseInt(totalExp.innerText);
@@ -24,4 +24,13 @@ document.getElementById('calculating-btn').addEventListener('click', () => {
     if (totalExpAmount > 0) {
         balance.innerText = incomeTotalAmount - totalExpAmount;
     }
+});
+document.getElementById('save-button').addEventListener('click', () => {
+    const parcent = getInputValue('parcent');
+    const incomeTotalAmount = getInputValue('income');
+    // find parcent
+    const findOutPercent = (incomeTotalAmount / 100) * parcent;
+    // update  parcent
+    const saveMoney = document.getElementById('saved-amount');
+    saveMoney.innerText = findOutPercent;
 });
