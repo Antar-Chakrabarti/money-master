@@ -17,7 +17,7 @@
         <h1 class="text-center m-5 text-success fw-bold ">Monthly Money Management</h1>
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <img class="img-fluid" src="img/pexels-cottonbro-3943723.jpg" alt="">
+                <im class="img-fluid" src="img/pexels-cottonbro-3943723.jpg" alt="">
             </div>
             <!-- input field -->
             <div class="col-sm-12 col-md-6 p-3 bg-light">
@@ -26,33 +26,33 @@
 
                     <div class="text-center mt-2">
                         <label>Income :</label>
-                        <input type="text"><br>
+                        <input id="income-total" type="text"><br>
                     </div>
 
                     <h5 class="text-center m-2">Expenses</h5>
 
                     <div class="text-center mt-2">
                         <label class="mt-3">Food:</label>
-                        <input type="text"><br>
+                        <input id="foodexp-total" type="text"><br>
                     </div>
 
                     <div class="text-center mt-2">
                         <label>Rent:</label>
-                        <input class="mt-3" type="text"><br>
+                        <input id="rentexp-total" class="mt-3" type="text"><br>
                     </div>
 
                     <div class="text-center mt-2">
                         <label>Clothes:</label>
-                        <input class="mt-3" type="text">
+                        <input id="clothexp-total" class="mt-3" type="text">
                     </div>
                 </div>
                 <!-- calculation button -->
                 <div class="text-center">
-                    <button class="btn btn-primary">Calculate</button>
+                    <button id="calculating-btn" class="btn btn-primary">Calculate</button>
                 </div>
                 <!-- total expenses -->
-                <h5 class="text-center m-2">Total Expnses: <span>000</span></h5>
-                <h5 class="text-center m-2">Balance: <span>000</span></h5>
+                <h5 class="text-center m-2">Total Expnses: <span id="expense-total">0</span></h5>
+                <h5 class="text-center m-2">Balance: <span id="balance-total">0</span></h5>
                 <div class="text-center">
                     <label>Save:</label>
                     <input class="parcent" type="text">
@@ -60,8 +60,8 @@
                     <button class="btn btn-primary py-2">Save</button>
                 </div>
                 <!-- saving and remaining balance -->
-                <h5 class="text-center m-2">Saving Amount: <span>000</span></h5>
-                <h5 class="text-center m-2">Remaining Balance: <span>000</span></h5>
+                <h5 class="text-center m-2">Saving Amount: <span>0</span></h5>
+                <h5 class="text-center m-2">Remaining Balance: <span>0</span></h5>
             </div>
         </div>
     </section>
