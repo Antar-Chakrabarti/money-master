@@ -4,6 +4,7 @@ function getInputValue(inputId) {
     const inputTotalAmount = parseInt(inputTotalText);
     return inputTotalAmount;
 }
+// calculate button
 document.getElementById('calculating-btn').addEventListener('click', () => {
     // income total
     const incomeTotalAmount = getInputValue('income');
@@ -13,6 +14,11 @@ document.getElementById('calculating-btn').addEventListener('click', () => {
     const rentExpAmount = getInputValue('rentexp')
         // Clothes expense
     const clothExpAmount = getInputValue('clothexp');
+    if (clothExpAmount < 0) {
+        document.getElementById('cloth-error').style.display = 'block';
+    } else {
+        document.getElementById('cloth-error').style.display = 'none';
+    }
     // total expense
     const totalExp = document.getElementById('expense-total');
     if (foodExpAmount > 0 && rentExpAmount > 0 && clothExpAmount > 0) {
@@ -25,7 +31,17 @@ document.getElementById('calculating-btn').addEventListener('click', () => {
         balance.innerText = incomeTotalAmount - totalExpAmount;
     }
 });
+// save button
 document.getElementById('save-button').addEventListener('click', () => {
+    // balance
+    const balanceText = document.getElementById('balance-total');
+    const balanceAmount = parseInt(balanceText.innerText);
+    console.log(balanceAmount);
+    // saving balance
+    const saveBalanceText = document.getElementById('saved-amount');
+    const saveBalance = parseInt(saveBalanceText.innerText);
+    console.log(saveBalance);
+
     const parcent = getInputValue('parcent');
     const incomeTotalAmount = getInputValue('income');
     // find parcent
@@ -33,4 +49,8 @@ document.getElementById('save-button').addEventListener('click', () => {
     // update  parcent
     const saveMoney = document.getElementById('saved-amount');
     saveMoney.innerText = findOutPercent;
+    const saveMoneyAmount = parseInt(saveMoney.innerText);
+    const remindingBalance = document.getElementById('remaining-balance');
+    const remindingBalanceAmount = balanceAmount - saveMoneyAmount;
+    remindingBalance.innerText = remindingBalanceAmount;
 });
